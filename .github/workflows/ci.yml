@@ -1,0 +1,22 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - name: Setup reproduzível
+        run: make setup
+      - name: Testes
+        run: make test
+      - name: Avaliação e relatório
+        run: make eval
+      - name: Relatório versionado está atualizado
+        run: git diff --exit-code -- docs/REPORT.md artifacts/evaluation.json

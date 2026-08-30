@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "policy_version", "thresholds", "input_limits", "segmentation",
+    "ambiguity", "unicode_policy", "runtime", "calibration", "paths"
+  ],
+  "properties": {
+    "policy_version": {"type": "string", "minLength": 1},
+    "thresholds": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["score_scale", "min_in_scope_score", "min_contrastive_margin"],
+      "properties": {
+        "score_scale": {"type": "integer", "minimum": 100},
+        "min_in_scope_score": {"type": ["integer", "null"]},
+        "min_contrastive_margin": {"type": ["integer", "null"]}
+      }
+    },
+    "input_limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["max_raw_chars", "max_normalized_chars", "max_semantic_units", "max_model_tokens_per_unit"],
+      "properties": {
+        "max_raw_chars": {"type": "integer", "minimum": 1},
+        "max_normalized_chars": {"type": "integer", "minimum": 1},
+        "max_semantic_units": {"type": "integer", "minimum": 1},
+        "max_model_tokens_per_unit": {"type": "integer", "minimum": 8}
+      }
+    },
+    "segmentation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["strong_separators", "window_tokens", "window_stride_tokens", "preserve_short_units", "conjunctions_file"],
+      "properties": {
+        "strong_separators": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "window_tokens": {"type": "integer", "minimum": 4},
+        "window_stride_tokens": {"type": "integer", "minimum": 1},
+        "preserve_short_units": {"const": true},
+        "conjunctions_file": {"type": "string", "minLength": 1}
+      }
+    },
+    "ambiguity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["max_tokens_without_context"],
+      "properties": {"max_tokens_without_context": {"type": "integer", "minimum": 1}}
+    },
+    "unicode_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reject_mixed_scripts"],
+      "properties": {"reject_mixed_scripts": {"type": "boolean"}}
+    },
+    "runtime": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["intra_op_threads", "inter_op_threads", "execution_mode", "provider", "embedding_quantization_scale"],
+      "properties": {
+        "intra_op_threads": {"const": 1},
+        "inter_op_threads": {"const": 1},
+        "execution_mode": {"const": "sequential"},
+        "provider": {"const": "CPUExecutionProvider"},
+        "embedding_quantization_scale": {"type": "integer", "minimum": 1000, "maximum": 32767}
+      }
+    },
+    "calibration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["max_false_block_rate", "threshold_grid_step"],
+      "properties": {
+        "max_false_block_rate": {"type": "number", "minimum": 0, "maximum": 1},
+        "threshold_grid_step": {"type": "integer", "minimum": 1}
+      }
+    },
+    "paths": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_manifest", "runtime_model", "tokenizer", "positive_prototypes",
+        "negative_prototypes", "positive_embeddings", "negative_embeddings", "prototype_manifest",
+        "forbidden_patterns", "safe_conversation_patterns", "domain_terms"
+      ],
+      "properties": {
+        "model_manifest": {"type": "string"},
+        "runtime_model": {"type": "string"},
+        "tokenizer": {"type": "string"},
+        "positive_prototypes": {"type": "string"},
+        "negative_prototypes": {"type": "string"},
+        "positive_embeddings": {"type": "string"},
+        "negative_embeddings": {"type": "string"},
+        "prototype_manifest": {"type": "string"},
+        "forbidden_patterns": {"type": "string"},
+        "safe_conversation_patterns": {"type": "string"}
+        ,"domain_terms": {"type": "string"}
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "model": {
+    "repo_id": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "revision": "207a9f54e4a968a008379b7da3d529cc2011aa87",
+    "license": "Apache-2.0",
+    "pooling": "attention-mask-aware mean pooling followed by L2 normalization",
+    "source_model": {
+      "hub_path": "onnx/model.onnx",
+      "local_path": "models/runtime/onnx/model.onnx",
+      "sha256": "10f7a088420252b26caf819236ca2c9d2987afd0fc06fec7553b542a5655a05a"
+    },
+    "runtime_model": {
+      "local_path": "models/runtime/onnx/model_int8.onnx",
+      "sha256": "ca4bc1b2ade991d771f2abd59bcafd4164f907ccfa18d7437cb5900737800f82",
+      "quantization": "onnxruntime.quantization.quantize_dynamic",
+      "weight_type": "QInt8"
+    }
+  },
+  "tokenizer_files": [
+    {
+      "hub_path": "tokenizer.json",
+      "local_path": "models/runtime/tokenizer.json",
+      "sha256": "2c3387be76557bd40970cec13153b3bbf80407865484b209e655e5e4729076b8"
+    },
+    {
+      "hub_path": "tokenizer_config.json",
+      "local_path": "models/runtime/tokenizer_config.json",
+      "sha256": "cac868512d555e9ac37a33c28300d36931ae4b5ddff43f1ca9bdacfe6fcd9dc8"
+    },
+    {
+      "hub_path": "special_tokens_map.json",
+      "local_path": "models/runtime/special_tokens_map.json",
+      "sha256": "378eb3bf733eb16e65792d7e3fda5b8a4631387ca04d2015199c4d4f22ae554d"
+    },
+    {
+      "hub_path": "sentencepiece.bpe.model",
+      "local_path": "models/runtime/sentencepiece.bpe.model",
+      "sha256": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865"
+    }
+  ],
+  "build_versions": {
+    "python": "3.12.13",
+    "numpy": "2.5.2",
+    "onnx": "1.22.0",
+    "onnxruntime": "1.29.0",
+    "tokenizers": "0.23.1"
+  }
+}

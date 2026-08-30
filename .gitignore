@@ -1,0 +1,13 @@
+.venv/
+.tools/
+.cache/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Artefatos grandes reconstruídos por make setup
+models/runtime/
+
+# Resultados dependentes da máquina ou contendo diagnósticos locais
+artifacts/benchmark-local.json
+artifacts/predictions.jsonl

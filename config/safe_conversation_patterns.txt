@@ -1,0 +1,14 @@
+# A entrada inteira precisa corresponder a uma destas formas.
+oi
+ola
+bom dia
+boa tarde
+boa noite
+obrigado
+obrigada
+muito obrigado
+muito obrigada
+valeu
+tchau
+ate mais
+tudo bem

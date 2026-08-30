@@ -1,0 +1,10 @@
+# Conectores que podem introduzir uma intenção independente.
+e
+mas
+ou
+porém
+contudo
+todavia
+entretanto
+além disso
+mudando de assunto

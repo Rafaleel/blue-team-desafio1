@@ -1,0 +1,49 @@
+policy_version: "1"
+
+thresholds:
+  score_scale: 10000
+  min_in_scope_score: 4100
+  min_contrastive_margin: 300
+
+input_limits:
+  max_raw_chars: 8000
+  max_normalized_chars: 8000
+  max_semantic_units: 64
+  max_model_tokens_per_unit: 128
+
+segmentation:
+  strong_separators: ["LF", ".", "!", "?", ";"]
+  window_tokens: 96
+  window_stride_tokens: 48
+  preserve_short_units: true
+  conjunctions_file: config/conjunctions_pt.txt
+
+ambiguity:
+  max_tokens_without_context: 6
+
+unicode_policy:
+  reject_mixed_scripts: true
+
+runtime:
+  intra_op_threads: 1
+  inter_op_threads: 1
+  execution_mode: sequential
+  provider: CPUExecutionProvider
+  embedding_quantization_scale: 32767
+
+calibration:
+  max_false_block_rate: 0.15
+  threshold_grid_step: 100
+
+paths:
+  model_manifest: models/MANIFEST.json
+  runtime_model: models/runtime/onnx/model_int8.onnx
+  tokenizer: models/runtime/tokenizer.json
+  positive_prototypes: data/prototypes_positive.jsonl
+  negative_prototypes: data/prototypes_negative.jsonl
+  positive_embeddings: models/runtime/positive_embeddings.npy
+  negative_embeddings: models/runtime/negative_embeddings.npy
+  prototype_manifest: models/runtime/prototype_manifest.json
+  forbidden_patterns: config/forbidden_control_patterns.txt
+  safe_conversation_patterns: config/safe_conversation_patterns.txt
+  domain_terms: config/domain_terms_pt.txt
