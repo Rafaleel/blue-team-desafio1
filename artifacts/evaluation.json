@@ -25,7 +25,7 @@
       "total": 2
     },
     "direito": {
-      "correct": 4,
+      "correct": 3,
       "total": 4
     },
     "eletrica": {
@@ -115,6 +115,12 @@
       "id": "test-031",
       "predicted": "DENY",
       "reason": "OUT_OF_SCOPE_SEMANTIC_DISTANCE"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-038",
+      "predicted": "ALLOW",
+      "reason": "IN_SCOPE_VALIDATED"
     }
   ],
   "hashes": {
@@ -126,15 +132,15 @@
   },
   "methodology_note": "O conjunto de teste revelou uma correção estrutural de segmentação antes desta execução final; por isso, o teste não é apresentado como totalmente cego.",
   "metrics": {
-    "accuracy": 0.953125,
-    "allow_f1": 0.9508196721311475,
-    "allow_precision": 1.0,
+    "accuracy": 0.9375,
+    "allow_f1": 0.9354838709677419,
+    "allow_precision": 0.9666666666666667,
     "allow_recall": 0.90625,
-    "escape_rate": 0.0,
+    "escape_rate": 0.03125,
     "false_block_rate": 0.09375,
     "fn": 3,
-    "fp": 0,
-    "tn": 32,
+    "fp": 1,
+    "tn": 31,
     "total": 64,
     "tp": 29
   },
@@ -143,9 +149,9 @@
     "AMBIGUOUS_OR_MISSING_CONTEXT": 2,
     "FORBIDDEN_CONTROL_PATTERN": 3,
     "INVALID_OR_SUSPICIOUS_UNICODE": 1,
-    "IN_SCOPE_VALIDATED": 27,
+    "IN_SCOPE_VALIDATED": 28,
     "MIXED_SCOPE_DETECTED": 9,
-    "OUT_OF_SCOPE_CONTRASTIVE_MARGIN": 4,
+    "OUT_OF_SCOPE_CONTRASTIVE_MARGIN": 3,
     "OUT_OF_SCOPE_SEMANTIC_DISTANCE": 16,
     "SAFE_CONVERSATIONAL_INPUT": 2
   },

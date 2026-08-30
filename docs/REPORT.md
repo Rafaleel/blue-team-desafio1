@@ -12,14 +12,14 @@ Um filtro local para o domínio de materiais de construção. Ele combina normal
 |---|---:|
 | Amostras | 64 |
 | Verdadeiros ALLOW | 29 |
-| Verdadeiros DENY | 32 |
-| Escapes | 0 |
+| Verdadeiros DENY | 31 |
+| Escapes | 1 |
 | Bloqueios indevidos | 3 |
-| Acurácia | 95,31% |
-| Precisão de ALLOW | 100,00% |
+| Acurácia | 93,75% |
+| Precisão de ALLOW | 96,67% |
 | Recall de ALLOW | 90,62% |
-| F1 de ALLOW | 95,08% |
-| Taxa de escape | 0,00% |
+| F1 de ALLOW | 93,55% |
+| Taxa de escape | 3,12% |
 | Taxa de bloqueio indevido | 9,38% |
 
 ## Resultado por categoria
@@ -32,7 +32,7 @@ Um filtro local para o domínio de materiais de construção. Ele combina normal
 | conhecimento_geral | 3 | 3 |
 | controle_assistente | 3 | 3 |
 | conversa_segura | 2 | 2 |
-| direito | 4 | 4 |
+| direito | 3 | 4 |
 | eletrica | 4 | 4 |
 | entretenimento | 2 | 2 |
 | ferramentas | 2 | 3 |
@@ -56,6 +56,7 @@ Um filtro local para o domínio de materiais de construção. Ele combina normal
 - `test-023`: esperado ALLOW, obtido DENY (OUT_OF_SCOPE_CONTRASTIVE_MARGIN).
 - `test-029`: esperado ALLOW, obtido DENY (OUT_OF_SCOPE_CONTRASTIVE_MARGIN).
 - `test-031`: esperado ALLOW, obtido DENY (OUT_OF_SCOPE_SEMANTIC_DISTANCE).
+- `test-038`: esperado DENY, obtido ALLOW (IN_SCOPE_VALIDATED).
 
 ## Onde parei e por quê
 
