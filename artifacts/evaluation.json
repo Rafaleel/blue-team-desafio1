@@ -119,8 +119,9 @@
   ],
   "hashes": {
     "calibration": "d60b9c7ee1497950168365269e1dd77e6f4cd191045e5900509b7fd4a2056df9",
-    "config": "93dc3e69b7f243fa94ab057135e84e5a98a6c77d00f0918f9d9802e57024b1cf",
+    "config": "b421bd3153618a23c9f6c7e85e94d509e7aaad4651901469c6e895c785d228ba",
     "negative_prototypes": "1069ffb3f43493e923d577306b8a4911c12cc91470d995885eb92a73dbd33b48",
+    "out_of_scope_rules": "6dd63bcba428793607d91917fa1801e81a7144eee8936d8e34d040f78c58f28b",
     "positive_prototypes": "b47a4aed291064b3060657316317b28dfaf3d3a3e4b1007ebf765c156aeb6005",
     "test": "d0fc106822a4798a3a354f90a918951c704b24b216e24de70c5f41493e43c1f9"
   },
@@ -138,15 +139,466 @@
     "total": 64,
     "tp": 29
   },
-  "policy_version": "1",
+  "policy_version": "2",
+  "predictions": [
+    {
+      "expected": "ALLOW",
+      "id": "test-001",
+      "policy_version": "2",
+      "reason": "IN_SCOPE_VALIDATED",
+      "verdict": "ALLOW"
+    },
+    {
+      "expected": "ALLOW",
+      "id": "test-002",
+      "policy_version": "2",
+      "reason": "IN_SCOPE_VALIDATED",
+      "verdict": "ALLOW"
+    },
+    {
+      "expected": "ALLOW",
+      "id": "test-003",
+      "policy_version": "2",
+      "reason": "IN_SCOPE_VALIDATED",
+      "verdict": "ALLOW"
+    },
+    {
+      "expected": "ALLOW",
+      "id": "test-004",
+      "policy_version": "2",
+      "reason": "IN_SCOPE_VALIDATED",
+      "verdict": "ALLOW"
+    },
+    {
+      "expected": "ALLOW",
+      "id": "test-005",
+      "policy_version": "2",
+      "reason": "IN_SCOPE_VALIDATED",
+      "verdict": "ALLOW"
+    },
+    {
+      "expected": "ALLOW",
+      "id": "test-006",
+      "policy_version": "2",
+      "reason": "IN_SCOPE_VALIDATED",
+      "verdict": "ALLOW"
+    },
+    {
+      "expected": "ALLOW",
+      "id": "test-007",
+      "policy_version": "2",
+      "reason": "IN_SCOPE_VALIDATED",
+      "verdict": "ALLOW"
+    },
+    {
+      "expected": "ALLOW",
+      "id": "test-008",
+      "policy_version": "2",
+      "reason": "IN_SCOPE_VALIDATED",
+      "verdict": "ALLOW"
+    },
+    {
+      "expected": "ALLOW",
+      "id": "test-009",
+      "policy_version": "2",
+      "reason": "IN_SCOPE_VALIDATED",
+      "verdict": "ALLOW"
+    },
+    {
+      "expected": "ALLOW",
+      "id": "test-010",
+      "policy_version": "2",
+      "reason": "IN_SCOPE_VALIDATED",
+      "verdict": "ALLOW"
+    },
+    {
+      "expected": "ALLOW",
+      "id": "test-011",
+      "policy_version": "2",
+      "reason": "IN_SCOPE_VALIDATED",
+      "verdict": "ALLOW"
+    },
+    {
+      "expected": "ALLOW",
+      "id": "test-012",
+      "policy_version": "2",
+      "reason": "IN_SCOPE_VALIDATED",
+      "verdict": "ALLOW"
+    },
+    {
+      "expected": "ALLOW",
+      "id": "test-013",
+      "policy_version": "2",
+      "reason": "IN_SCOPE_VALIDATED",
+      "verdict": "ALLOW"
+    },
+    {
+      "expected": "ALLOW",
+      "id": "test-014",
+      "policy_version": "2",
+      "reason": "IN_SCOPE_VALIDATED",
+      "verdict": "ALLOW"
+    },
+    {
+      "expected": "ALLOW",
+      "id": "test-015",
+      "policy_version": "2",
+      "reason": "IN_SCOPE_VALIDATED",
+      "verdict": "ALLOW"
+    },
+    {
+      "expected": "ALLOW",
+      "id": "test-016",
+      "policy_version": "2",
+      "reason": "IN_SCOPE_VALIDATED",
+      "verdict": "ALLOW"
+    },
+    {
+      "expected": "ALLOW",
+      "id": "test-017",
+      "policy_version": "2",
+      "reason": "IN_SCOPE_VALIDATED",
+      "verdict": "ALLOW"
+    },
+    {
+      "expected": "ALLOW",
+      "id": "test-018",
+      "policy_version": "2",
+      "reason": "IN_SCOPE_VALIDATED",
+      "verdict": "ALLOW"
+    },
+    {
+      "expected": "ALLOW",
+      "id": "test-019",
+      "policy_version": "2",
+      "reason": "IN_SCOPE_VALIDATED",
+      "verdict": "ALLOW"
+    },
+    {
+      "expected": "ALLOW",
+      "id": "test-020",
+      "policy_version": "2",
+      "reason": "IN_SCOPE_VALIDATED",
+      "verdict": "ALLOW"
+    },
+    {
+      "expected": "ALLOW",
+      "id": "test-021",
+      "policy_version": "2",
+      "reason": "IN_SCOPE_VALIDATED",
+      "verdict": "ALLOW"
+    },
+    {
+      "expected": "ALLOW",
+      "id": "test-022",
+      "policy_version": "2",
+      "reason": "IN_SCOPE_VALIDATED",
+      "verdict": "ALLOW"
+    },
+    {
+      "expected": "ALLOW",
+      "id": "test-023",
+      "policy_version": "2",
+      "reason": "OUT_OF_SCOPE_CONTRASTIVE_MARGIN",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "ALLOW",
+      "id": "test-024",
+      "policy_version": "2",
+      "reason": "IN_SCOPE_VALIDATED",
+      "verdict": "ALLOW"
+    },
+    {
+      "expected": "ALLOW",
+      "id": "test-025",
+      "policy_version": "2",
+      "reason": "IN_SCOPE_VALIDATED",
+      "verdict": "ALLOW"
+    },
+    {
+      "expected": "ALLOW",
+      "id": "test-026",
+      "policy_version": "2",
+      "reason": "IN_SCOPE_VALIDATED",
+      "verdict": "ALLOW"
+    },
+    {
+      "expected": "ALLOW",
+      "id": "test-027",
+      "policy_version": "2",
+      "reason": "SAFE_CONVERSATIONAL_INPUT",
+      "verdict": "ALLOW"
+    },
+    {
+      "expected": "ALLOW",
+      "id": "test-028",
+      "policy_version": "2",
+      "reason": "SAFE_CONVERSATIONAL_INPUT",
+      "verdict": "ALLOW"
+    },
+    {
+      "expected": "ALLOW",
+      "id": "test-029",
+      "policy_version": "2",
+      "reason": "OUT_OF_SCOPE_CONTRASTIVE_MARGIN",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "ALLOW",
+      "id": "test-030",
+      "policy_version": "2",
+      "reason": "IN_SCOPE_VALIDATED",
+      "verdict": "ALLOW"
+    },
+    {
+      "expected": "ALLOW",
+      "id": "test-031",
+      "policy_version": "2",
+      "reason": "OUT_OF_SCOPE_SEMANTIC_DISTANCE",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "ALLOW",
+      "id": "test-032",
+      "policy_version": "2",
+      "reason": "IN_SCOPE_VALIDATED",
+      "verdict": "ALLOW"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-033",
+      "policy_version": "2",
+      "reason": "OUT_OF_SCOPE_SEMANTIC_DISTANCE",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-034",
+      "policy_version": "2",
+      "reason": "OUT_OF_SCOPE_SEMANTIC_DISTANCE",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-035",
+      "policy_version": "2",
+      "reason": "OUT_OF_SCOPE_SEMANTIC_DISTANCE",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-036",
+      "policy_version": "2",
+      "reason": "OUT_OF_SCOPE_SEMANTIC_DISTANCE",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-037",
+      "policy_version": "2",
+      "reason": "OUT_OF_SCOPE_CONTRASTIVE_MARGIN",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-038",
+      "policy_version": "2",
+      "reason": "EXPLICIT_OUT_OF_SCOPE_PATTERN",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-039",
+      "policy_version": "2",
+      "reason": "OUT_OF_SCOPE_SEMANTIC_DISTANCE",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-040",
+      "policy_version": "2",
+      "reason": "OUT_OF_SCOPE_SEMANTIC_DISTANCE",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-041",
+      "policy_version": "2",
+      "reason": "OUT_OF_SCOPE_SEMANTIC_DISTANCE",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-042",
+      "policy_version": "2",
+      "reason": "EXPLICIT_OUT_OF_SCOPE_PATTERN",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-043",
+      "policy_version": "2",
+      "reason": "OUT_OF_SCOPE_SEMANTIC_DISTANCE",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-044",
+      "policy_version": "2",
+      "reason": "OUT_OF_SCOPE_SEMANTIC_DISTANCE",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-045",
+      "policy_version": "2",
+      "reason": "OUT_OF_SCOPE_SEMANTIC_DISTANCE",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-046",
+      "policy_version": "2",
+      "reason": "OUT_OF_SCOPE_SEMANTIC_DISTANCE",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-047",
+      "policy_version": "2",
+      "reason": "OUT_OF_SCOPE_SEMANTIC_DISTANCE",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-048",
+      "policy_version": "2",
+      "reason": "OUT_OF_SCOPE_SEMANTIC_DISTANCE",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-049",
+      "policy_version": "2",
+      "reason": "OUT_OF_SCOPE_SEMANTIC_DISTANCE",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-050",
+      "policy_version": "2",
+      "reason": "FORBIDDEN_CONTROL_PATTERN",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-051",
+      "policy_version": "2",
+      "reason": "FORBIDDEN_CONTROL_PATTERN",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-052",
+      "policy_version": "2",
+      "reason": "MIXED_SCOPE_DETECTED",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-053",
+      "policy_version": "2",
+      "reason": "MIXED_SCOPE_DETECTED",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-054",
+      "policy_version": "2",
+      "reason": "MIXED_SCOPE_DETECTED",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-055",
+      "policy_version": "2",
+      "reason": "MIXED_SCOPE_DETECTED",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-056",
+      "policy_version": "2",
+      "reason": "MIXED_SCOPE_DETECTED",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-057",
+      "policy_version": "2",
+      "reason": "MIXED_SCOPE_DETECTED",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-058",
+      "policy_version": "2",
+      "reason": "AMBIGUOUS_OR_MISSING_CONTEXT",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-059",
+      "policy_version": "2",
+      "reason": "AMBIGUOUS_OR_MISSING_CONTEXT",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-060",
+      "policy_version": "2",
+      "reason": "INVALID_OR_SUSPICIOUS_UNICODE",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-061",
+      "policy_version": "2",
+      "reason": "FORBIDDEN_CONTROL_PATTERN",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-062",
+      "policy_version": "2",
+      "reason": "MIXED_SCOPE_DETECTED",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-063",
+      "policy_version": "2",
+      "reason": "MIXED_SCOPE_DETECTED",
+      "verdict": "DENY"
+    },
+    {
+      "expected": "DENY",
+      "id": "test-064",
+      "policy_version": "2",
+      "reason": "MIXED_SCOPE_DETECTED",
+      "verdict": "DENY"
+    }
+  ],
   "reasons": {
     "AMBIGUOUS_OR_MISSING_CONTEXT": 2,
+    "EXPLICIT_OUT_OF_SCOPE_PATTERN": 2,
     "FORBIDDEN_CONTROL_PATTERN": 3,
     "INVALID_OR_SUSPICIOUS_UNICODE": 1,
     "IN_SCOPE_VALIDATED": 27,
     "MIXED_SCOPE_DETECTED": 9,
-    "OUT_OF_SCOPE_CONTRASTIVE_MARGIN": 4,
-    "OUT_OF_SCOPE_SEMANTIC_DISTANCE": 16,
+    "OUT_OF_SCOPE_CONTRASTIVE_MARGIN": 3,
+    "OUT_OF_SCOPE_SEMANTIC_DISTANCE": 15,
     "SAFE_CONVERSATIONAL_INPUT": 2
   },
   "schema_version": 1,

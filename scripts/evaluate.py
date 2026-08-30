@@ -59,6 +59,7 @@ def main() -> int:
     reasons: dict[str, int] = defaultdict(int)
     categories: dict[str, dict[str, int]] = defaultdict(lambda: {"total": 0, "correct": 0})
     errors = []
+    predictions = []
 
     prediction_path = ROOT / "artifacts" / "predictions.jsonl"
     prediction_path.parent.mkdir(parents=True, exist_ok=True)
@@ -80,14 +81,12 @@ def main() -> int:
                         "reason": result["reason"],
                     }
                 )
+            prediction = {"id": sample.id, "expected": sample.expected, **result}
+            predictions.append(prediction)
             prediction_file.write(
                 json.dumps(
-                    {"id": sample.id, "expected": sample.expected, **result},
-                    ensure_ascii=False,
-                    sort_keys=True,
-                    separators=(",", ":"),
-                )
-                + "\n"
+                    prediction, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+                ) + "\n"
             )
 
     result = {
@@ -96,6 +95,7 @@ def main() -> int:
         "thresholds": guard.config.section("thresholds"),
         "hashes": {
             "config": sha256(ROOT / "config" / "filter_config.yaml"),
+            "out_of_scope_rules": sha256(ROOT / "config" / "out_of_scope_rules.yaml"),
             "calibration": sha256(ROOT / "data" / "calibration.jsonl"),
             "test": sha256(ROOT / "data" / "test.jsonl"),
             "positive_prototypes": sha256(ROOT / "data" / "prototypes_positive.jsonl"),
@@ -105,6 +105,7 @@ def main() -> int:
         "categories": {key: categories[key] for key in sorted(categories)},
         "reasons": dict(sorted(reasons.items())),
         "errors": errors,
+        "predictions": predictions,
         "methodology_note": "O conjunto de teste revelou uma correção estrutural de segmentação antes desta execução final; por isso, o teste não é apresentado como totalmente cego.",
     }
     output_path = ROOT / "artifacts" / "evaluation.json"

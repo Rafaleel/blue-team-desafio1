@@ -4,19 +4,42 @@ on:
   push:
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   validate:
-    runs-on: ubuntu-latest
+    name: validate (${{ matrix.arch }})
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - arch: x86-64-canônico
+            runner: ubuntu-24.04
+          - arch: arm64-portabilidade
+            runner: ubuntu-24.04-arm
+    runs-on: ${{ matrix.runner }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
         with:
+          version: "0.11.29"
           enable-cache: true
+          cache-dependency-glob: requirements.lock
       - name: Setup reproduzível
         run: make setup
+      - name: Ambiente de execução
+        run: |
+          uname -m
+          uv --version
+          .venv/bin/python -c 'import onnxruntime, platform; print(platform.platform()); print("onnxruntime=" + onnxruntime.__version__)'
       - name: Testes
         run: make test
+      - name: Calibração reproduzível
+        run: make calibrate
       - name: Avaliação e relatório
         run: make eval
-      - name: Relatório versionado está atualizado
-        run: git diff --exit-code -- docs/REPORT.md artifacts/evaluation.json
+      - name: Margem de segurança dos bloqueios
+        run: make margin-audit
+      - name: Artefatos funcionais versionados estão atualizados
+        run: git diff --exit-code -- docs/REPORT.md artifacts/calibration.json artifacts/evaluation.json

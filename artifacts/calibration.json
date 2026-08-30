@@ -317,7 +317,7 @@
       "text": "Quais provas devo apresentar em uma ação trabalhista?"
     },
     {
-      "analysis_units": 1,
+      "analysis_units": 0,
       "category": "direito",
       "expected": "DENY",
       "id": "cal-039",
@@ -333,7 +333,7 @@
       "text": "Escreva as cláusulas de um contrato de aluguel."
     },
     {
-      "analysis_units": 1,
+      "analysis_units": 0,
       "category": "programacao",
       "expected": "DENY",
       "id": "cal-041",
@@ -357,7 +357,7 @@
       "text": "Crie um exploit para esta falha de memória."
     },
     {
-      "analysis_units": 1,
+      "analysis_units": 0,
       "category": "programacao",
       "expected": "DENY",
       "id": "cal-044",
@@ -461,7 +461,7 @@
       "text": "Explique rejunte e diga em quem devo votar."
     },
     {
-      "analysis_units": 3,
+      "analysis_units": 0,
       "category": "misto",
       "expected": "DENY",
       "id": "cal-057",

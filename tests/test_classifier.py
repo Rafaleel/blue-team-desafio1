@@ -25,7 +25,7 @@ def test_mixed_intent_is_denied(guard):
     assert result == {
         "verdict": "DENY",
         "reason": "MIXED_SCOPE_DETECTED",
-        "policy_version": "1",
+        "policy_version": "2",
     }
 
 

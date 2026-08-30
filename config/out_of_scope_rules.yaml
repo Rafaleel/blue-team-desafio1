@@ -1,0 +1,17 @@
+schema_version: 1
+rules:
+  - id: recurso_juridico
+    all:
+      - [recorrer, contestar, apresentar recurso, entrar com recurso]
+      - [multa, autuacao, infracao, sentenca, decisao judicial]
+  - id: direito_a_indenizacao
+    all:
+      - [tenho direito, direito a]
+      - [indenizacao, beneficio, reembolso]
+  - id: invasao_de_conta
+    all:
+      - [invadir, acessar sem autorizacao, roubar acesso]
+      - [conta, sistema, servidor]
+  - id: tecnologia_de_software_explicita
+    all:
+      - [container docker, kubernetes, api rest, codigo python, codigo java, codigo c++, banco postgresql]

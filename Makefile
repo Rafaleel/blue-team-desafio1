@@ -8,7 +8,7 @@ HF_HOME ?= .cache/huggingface
 
 export PYTHONPATH UV_CACHE_DIR UV_PYTHON_INSTALL_DIR HF_HOME
 
-.PHONY: setup verify-assets test calibrate eval benchmark benchmark-enforce determinism run
+.PHONY: setup verify-assets test calibrate eval margin-audit benchmark benchmark-enforce determinism run
 
 setup:
 	uv python install 3.12.13
@@ -31,6 +31,9 @@ calibrate: verify-assets
 eval: verify-assets
 	$(PYTHON) scripts/evaluate.py
 	$(PYTHON) scripts/generate_report.py
+
+margin-audit: verify-assets
+	$(PYTHON) scripts/audit_decision_margins.py --enforce
 
 benchmark: verify-assets
 	$(PYTHON) scripts/benchmark.py

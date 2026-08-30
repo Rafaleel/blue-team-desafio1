@@ -10,4 +10,5 @@ models/runtime/
 
 # Resultados dependentes da máquina ou contendo diagnósticos locais
 artifacts/benchmark-local.json
+artifacts/margin-audit.json
 artifacts/predictions.jsonl

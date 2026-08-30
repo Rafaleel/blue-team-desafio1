@@ -61,6 +61,7 @@ def load_config(path: str | Path = "config/filter_config.yaml") -> FilterConfig:
     required_files = (
         Path(values["segmentation"]["conjunctions_file"]),
         Path(values["paths"]["forbidden_patterns"]),
+        Path(values["paths"]["out_of_scope_rules"]),
         Path(values["paths"]["safe_conversation_patterns"]),
         Path(values["paths"]["domain_terms"]),
     )

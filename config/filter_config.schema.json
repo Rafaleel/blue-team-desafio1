@@ -4,7 +4,7 @@
   "additionalProperties": false,
   "required": [
     "policy_version", "thresholds", "input_limits", "segmentation",
-    "ambiguity", "unicode_policy", "runtime", "calibration", "paths"
+    "ambiguity", "unicode_policy", "runtime", "calibration", "stability", "paths"
   ],
   "properties": {
     "policy_version": {"type": "string", "minLength": 1},
@@ -74,13 +74,21 @@
         "threshold_grid_step": {"type": "integer", "minimum": 1}
       }
     },
+    "stability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["min_deny_headroom"],
+      "properties": {
+        "min_deny_headroom": {"type": "integer", "minimum": 1}
+      }
+    },
     "paths": {
       "type": "object",
       "additionalProperties": false,
       "required": [
         "model_manifest", "runtime_model", "tokenizer", "positive_prototypes",
         "negative_prototypes", "positive_embeddings", "negative_embeddings", "prototype_manifest",
-        "forbidden_patterns", "safe_conversation_patterns", "domain_terms"
+        "forbidden_patterns", "out_of_scope_rules", "safe_conversation_patterns", "domain_terms"
       ],
       "properties": {
         "model_manifest": {"type": "string"},
@@ -92,8 +100,9 @@
         "negative_embeddings": {"type": "string"},
         "prototype_manifest": {"type": "string"},
         "forbidden_patterns": {"type": "string"},
-        "safe_conversation_patterns": {"type": "string"}
-        ,"domain_terms": {"type": "string"}
+        "out_of_scope_rules": {"type": "string"},
+        "safe_conversation_patterns": {"type": "string"},
+        "domain_terms": {"type": "string"}
       }
     }
   }

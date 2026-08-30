@@ -43,6 +43,7 @@ class DomainGuardFilter:
         )
         self.lexical = LexicalPolicy(
             self.config.path("forbidden_patterns"),
+            self.config.path("out_of_scope_rules"),
             self.config.path("safe_conversation_patterns"),
             self.config.path("domain_terms"),
         )
@@ -66,6 +67,8 @@ class DomainGuardFilter:
             return Analysis(Reason.EMPTY_INPUT, normalized, (), 0, False)
         if self.lexical.has_forbidden_control(normalized.lexical_text):
             return Analysis(Reason.FORBIDDEN_CONTROL_PATTERN, normalized, (), 0, False)
+        if self.lexical.has_explicit_out_of_scope(normalized.lexical_text):
+            return Analysis(Reason.EXPLICIT_OUT_OF_SCOPE_PATTERN, normalized, (), 0, False)
         if self.lexical.is_safe_conversation(normalized.lexical_text):
             return Analysis(Reason.SAFE_CONVERSATIONAL_INPUT, normalized, (), 0, False)
         try:

@@ -1,4 +1,4 @@
-policy_version: "1"
+policy_version: "2"
 
 thresholds:
   score_scale: 10000
@@ -35,6 +35,9 @@ calibration:
   max_false_block_rate: 0.15
   threshold_grid_step: 100
 
+stability:
+  min_deny_headroom: 300
+
 paths:
   model_manifest: models/MANIFEST.json
   runtime_model: models/runtime/onnx/model_int8.onnx
@@ -45,5 +48,6 @@ paths:
   negative_embeddings: models/runtime/negative_embeddings.npy
   prototype_manifest: models/runtime/prototype_manifest.json
   forbidden_patterns: config/forbidden_control_patterns.txt
+  out_of_scope_rules: config/out_of_scope_rules.yaml
   safe_conversation_patterns: config/safe_conversation_patterns.txt
   domain_terms: config/domain_terms_pt.txt

@@ -13,7 +13,7 @@ Se uma entrada contiver uma intenção permitida e outra externa, o resultado é
 ## Como funciona
 
 1. **Normalização:** aplica Unicode NFKC, preserva parágrafos, produz uma forma lexical sem acentos nem caracteres invisíveis e detecta palavras que misturam alfabetos.
-2. **Regras de alta precisão:** bloqueia tentativas explícitas de extrair ou substituir instruções. Termos médicos ou jurídicos isolados não são denylist para evitar falsos bloqueios.
+2. **Regras de alta precisão:** bloqueia tentativas explícitas de extrair ou substituir instruções e combinações inequívocas de intenção e objeto externos. Termos médicos ou jurídicos isolados não são denylist para evitar falsos bloqueios.
 3. **Segmentação sem perda:** avalia parágrafos, sentenças, cláusulas curtas e janelas sobrepostas. Nenhum trecho é descartado e textos longos não são truncados silenciosamente.
 4. **Embedding local:** usa um MiniLM multilíngue ONNX quantizado para INT8, com CPU e uma thread.
 5. **Protótipos contrastivos:** compara cada unidade com múltiplos exemplos positivos e negativos públicos. Uma unidade passa quando sua proximidade positiva e sua margem contra exemplos negativos alcançam os thresholds configurados.
@@ -23,7 +23,7 @@ Os embeddings são convertidos para `int16`; similaridades e thresholds são int
 
 ## Requisitos do sistema
 
-- Linux x86-64 testado;
+- Linux x86-64; o CI também verifica portabilidade em ARM64;
 - `make`;
 - [`uv`](https://docs.astral.sh/uv/) disponível no `PATH`;
 - conexão de rede apenas durante `make setup`;
@@ -63,7 +63,7 @@ printf '%s\n' 'Qual argamassa usar no porcelanato?' | \
 Saída:
 
 ```json
-{"verdict":"ALLOW","reason":"IN_SCOPE_VALIDATED","policy_version":"1"}
+{"verdict":"ALLOW","reason":"IN_SCOPE_VALIDATED","policy_version":"2"}
 ```
 
 Arquivo JSONL inteiro:
@@ -90,6 +90,12 @@ O aceite ampliado de determinismo usa cem processos independentes:
 
 ```bash
 make determinism
+```
+
+A resistência de entradas `DENY` às fronteiras semânticas é verificada com:
+
+```bash
+make margin-audit
 ```
 
 ## Avaliação reproduzível
@@ -139,7 +145,7 @@ O script usa relógio monotônico, warmup, 200 repetições nas cargas curta e n
 
 ## Configuração
 
-Todos os valores que alteram veredito ficam em `config/filter_config.yaml`, validado por `config/filter_config.schema.json`. Isso inclui thresholds, limites, janelas, threads e caminhos de política. Padrões lexicais, termos de desambiguação e conjunções também são arquivos públicos em `config/`.
+Todos os valores que alteram veredito ficam em `config/filter_config.yaml`, validado por `config/filter_config.schema.json`. Isso inclui thresholds, limites, janelas, threads e caminhos de política. Regras explícitas de fora de escopo, padrões lexicais, termos de desambiguação e conjunções também são arquivos públicos em `config/`.
 
 Configuração ausente, threshold nulo, artefato inválido ou hash divergente causa falha de inicialização; o filtro não desliga uma defesa silenciosamente.
 
@@ -154,7 +160,7 @@ A biblioteca não registra nada por classificação. A saída funcional não con
 - Consultas legítimas muito curtas ou semanticamente distantes dos protótipos podem ser bloqueadas.
 - O código, protótipos e thresholds são públicos; um atacante pode otimizar novas evasões.
 - O filtro decide domínio, não a veracidade nem a segurança completa da resposta protegida.
-- Somente Linux x86-64 foi validado até agora.
+- O CI compara decisões em Linux x86-64 e ARM64, mas outros sistemas operacionais não foram validados.
 
 ## Licenças
 
