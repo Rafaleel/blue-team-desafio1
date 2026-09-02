@@ -166,7 +166,6 @@ A biblioteca não registra nada por classificação. A saída funcional não con
 
 O código deste projeto usa a licença MIT, disponível em [LICENSE](LICENSE). O modelo `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2` usa Apache-2.0; revisão e hashes estão registrados em `models/MANIFEST.json`.
 
-## Metadados da entrega
+## Referências 
 
-- Repositório público: [blue-team-desafio1](https://github.com/Rafaleel/blue-team-desafio1).
-- Hash do commit avaliado: e2e8dd3117f2d0ada91b4ca703f6b37bb1e131d3.
+Não procurei nem consultei referências bibliográficas, artigos acadêmicos ou implementações externas específicas para fundamentar esta solução. O filtro foi desenvolvido diretamente a partir dos requisitos do desafio, com assistência de IA e revisão manual.
