@@ -168,5 +168,5 @@ O código deste projeto usa a licença MIT, disponível em [LICENSE](LICENSE). O
 
 ## Metadados da entrega
 
-- Repositório público: preencher ao publicar.
-- Hash do commit avaliado: preencher ao finalizar a entrega.
+- Repositório público: [blue-team-desafio1](https://github.com/Rafaleel/blue-team-desafio1).
+- Hash do commit avaliado: 5026970b14e98cb0dc18fd69188b9ed86eb8eb5e.
