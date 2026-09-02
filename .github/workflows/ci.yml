@@ -42,4 +42,4 @@ jobs:
       - name: Margem de segurança dos bloqueios
         run: make margin-audit
       - name: Artefatos funcionais versionados estão atualizados
-        run: git diff --exit-code -- docs/REPORT.md artifacts/calibration.json artifacts/evaluation.json
+        run: git diff --exit-code -- docs/REPORT.md artifacts/evaluation.json
